@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = () => {
+const Form = ({ formData, setFormData, handleData, saveContact }) => {
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl">
@@ -9,23 +9,35 @@ const Form = () => {
         <div className="space-y-4">
           <input
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleData}
             placeholder="Full Name"
             className="input input-bordered w-full bg-slate-900/50"
           />
 
           <input
             type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleData}
             placeholder="Email Address"
             className="input input-bordered w-full bg-slate-900/50"
           />
 
           <input
             type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleData}
             placeholder="Phone Number"
             className="input input-bordered w-full bg-slate-900/50"
           />
 
-          <button className="btn btn-primary w-full rounded-xl">
+          <button
+            className="btn btn-primary w-full rounded-xl"
+            onClick={saveContact}
+          >
             Save Contact
           </button>
         </div>
