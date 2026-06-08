@@ -1,6 +1,13 @@
 import React from "react";
 
 const ContactList = ({ contacts, search, deleteContact, edit }) => {
+  const filteredContacts = contacts.filter(
+    (contact) =>
+      contact.name.toLowerCase().includes(search.toLowerCase()) ||
+      contact.email.toLowerCase().includes(search.toLowerCase()) ||
+      contact.phone.includes(search),
+  );
+
   return (
     <div className="mt-8">
       {/* Header */}
@@ -8,20 +15,28 @@ const ContactList = ({ contacts, search, deleteContact, edit }) => {
         <h2 className="text-xl font-bold text-white">Saved Contacts</h2>
 
         <span className="badge badge-primary badge-lg">
-          {contacts.length} Contact
+          {contacts.length} Contact{contacts.length !== 1 ? "s" : ""}
         </span>
       </div>
 
       {/* Contact List */}
       <div className="space-y-4">
-        {contacts
-          .filter(
-            (contact) =>
-              contact.name.toLowerCase().includes(search.toLowerCase()) ||
-              contact.email.toLowerCase().includes(search.toLowerCase()) ||
-              contact.phone.includes(search),
-          )
-          .map((person) => {
+        {filteredContacts.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-white/10 bg-slate-900/30 p-10 text-center">
+            <div className="text-5xl mb-3">📭</div>
+
+            <h3 className="text-xl font-semibold text-white">
+              No Contacts Found
+            </h3>
+
+            <p className="mt-2 text-slate-400">
+              {contacts.length === 0
+                ? "You haven't added any contacts yet."
+                : "No contacts match your search."}
+            </p>
+          </div>
+        ) : (
+          filteredContacts.map((person) => {
             return (
               <div
                 key={person.id}
@@ -74,7 +89,8 @@ const ContactList = ({ contacts, search, deleteContact, edit }) => {
                 </div>
               </div>
             );
-          })}
+          })
+        )}
       </div>
     </div>
   );
