@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Search = () => {
+export const Search = ({ search, setSearch }) => {
   return (
     <div className="flex justify-center">
       <label className="input input-bordered flex items-center gap-2 w-full max-w-lg bg-slate-900/50">
@@ -24,7 +24,9 @@ export const Search = () => {
         <input
           type="search"
           className="grow"
-          placeholder="Search contacts..."
+          placeholder="Search contacts"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </label>
     </div>

@@ -23,6 +23,9 @@ const App = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  // UseState to handle Search
+  const [search, setSearch] = useState("");
+
   // Function to add contact
   const saveContact = () => {
     // Check empty fields
@@ -75,8 +78,8 @@ const App = () => {
         />
 
         <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 shadow-2xl">
-          <Search />
-          <ContactList contacts={contacts} />
+          <Search search={search} setSearch={setSearch} />
+          <ContactList contacts={contacts} search={search} />
         </div>
       </div>
     </div>
