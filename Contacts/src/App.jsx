@@ -9,8 +9,10 @@ const App = () => {
     <div>
       <Nav />
       <Form />
-      <Search />
-      <ContactList />
+      <div className="mt-10 bg-slate-800 shadow-[0px_0px_150px_50px_white] p-4 m-4 rounded-xl">
+        <Search />
+        <ContactList />
+      </div>
     </div>
   );
 };
