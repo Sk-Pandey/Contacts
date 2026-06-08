@@ -2,65 +2,60 @@ import React from "react";
 
 const ContactList = () => {
   return (
-    <div className="mt-6">
-      <ul className="list bg-base-100 rounded-box shadow-md">
-        <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">
-          Saved Contacts
-        </li>
+    <div className="mt-8">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-5">
+        <h2 className="text-xl font-bold text-white">Saved Contacts</h2>
 
-        <li className="list-row">
-          <div className="flex justify-center items-center">
-            <div className="flex justify-center items-center font-bold bg-slate-600 rounded-full w-10 h-10 ">
-              D
+        <span className="badge badge-primary badge-lg">1 Contact</span>
+      </div>
+
+      {/* Contact List */}
+      <div className="space-y-4">
+        <div className="group rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-sm p-5 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
+          <div className="flex items-center justify-between">
+            {/* Left Section */}
+            <div className="flex items-center gap-4">
+              {/* First Letter Avatar */}
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-xl font-bold text-white shadow-md">
+                D
+              </div>
+
+              {/* Contact Details */}
+              <div>
+                <h3 className="text-lg font-semibold text-white">Dio Lupa</h3>
+
+                <div className="mt-1 flex items-center gap-2 text-sm text-slate-400">
+                  <span>📞</span>
+                  <span>9415251793</span>
+                </div>
+
+                <div className="mt-1 flex items-center gap-2 text-sm text-slate-500">
+                  <span>📧</span>
+                  <span>DioLupa@gmail.com</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Section */}
+            <div className="flex items-center gap-2">
+              <button
+                className="btn btn-circle btn-sm btn-ghost hover:bg-info/20"
+                aria-label="Edit"
+              >
+                ✏️
+              </button>
+
+              <button
+                className="btn btn-circle btn-sm btn-ghost hover:bg-error/20"
+                aria-label="Delete"
+              >
+                🗑️
+              </button>
             </div>
           </div>
-          <div>
-            <div>Dio Lupa</div>
-            <div className="text-2xs uppercase font-semibold opacity-60">
-              9415251793
-            </div>
-            <div className="text-xs uppercase font-semibold opacity-60">
-              DioLupa@gmail.com
-            </div>
-          </div>
-          <button className="btn btn-square btn-ghost" aria-label="Edit">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="size-[1.2em]"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M16.862 4.487a2.1 2.1 0 1 1 2.97 2.97L7.5 19.79l-4 1 1-4L16.862 4.487Z"
-              />
-            </svg>
-          </button>
-
-          <button
-            className="btn btn-square btn-ghost text-error"
-            aria-label="Delete"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="size-[1.2em]"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3 6h18M8 6V4h8v2m-9 0v14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6"
-              />
-            </svg>
-          </button>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   );
 };
