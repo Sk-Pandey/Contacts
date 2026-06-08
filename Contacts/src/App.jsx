@@ -46,6 +46,7 @@ const App = () => {
       setEditId(null);
       return;
     }
+
     // Check empty fields
     if (
       !formData.name.trim() ||
@@ -110,7 +111,7 @@ const App = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white">
       <Nav />
 
-      <div className="max-w-5xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <Form
           handleData={handleData}
           formData={formData}
@@ -119,8 +120,9 @@ const App = () => {
           editId={editId}
         />
 
-        <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 shadow-2xl">
+        <div className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg p-4 sm:p-6 shadow-2xl">
           <Search search={search} setSearch={setSearch} />
+
           <ContactList
             contacts={contacts}
             search={search}
