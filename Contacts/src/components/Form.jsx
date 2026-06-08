@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ formData, setFormData, handleData, saveContact }) => {
+const Form = ({ formData, setFormData, handleData, saveContact, editId }) => {
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-xl">
@@ -32,13 +32,18 @@ const Form = ({ formData, setFormData, handleData, saveContact }) => {
             onChange={handleData}
             placeholder="Phone Number"
             className="input input-bordered w-full bg-slate-900/50"
+            onKeyDown={(e) => {
+              if (e.key == "Enter") {
+                saveContact();
+              }
+            }}
           />
 
           <button
             className="btn btn-primary w-full rounded-xl"
             onClick={saveContact}
           >
-            Save Contact
+            {editId ? "Update Contact" : "Save Contact"}
           </button>
         </div>
       </div>

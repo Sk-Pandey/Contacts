@@ -26,8 +26,26 @@ const App = () => {
   // UseState to handle Search
   const [search, setSearch] = useState("");
 
+  // UseState to handle editId
+  const [editId, setEditId] = useState(null);
+
   // Function to add contact
   const saveContact = () => {
+    if (editId) {
+      setContacts(
+        contacts.map((person) => {
+          return person.id === editId ? { ...formData, id: editId } : person;
+        }),
+      );
+      setFormData({
+        id: "",
+        name: "",
+        email: "",
+        phone: "",
+      });
+      setEditId(null);
+      return;
+    }
     // Check empty fields
     if (
       !formData.name.trim() ||
@@ -68,7 +86,24 @@ const App = () => {
 
   // delete contact function
   const deleteContact = (id) => {
+    if (editId) {
+      setEditId(null);
+      setFormData({
+        id: "",
+        name: "",
+        email: "",
+        phone: "",
+      });
+    }
     setContacts(contacts.filter((person) => person.id !== id));
+  };
+
+  // Edit Function
+  const edit = (id) => {
+    setEditId(id);
+    const contact = contacts.find((person) => person.id === id);
+
+    setFormData(contact);
   };
 
   return (
@@ -81,11 +116,17 @@ const App = () => {
           formData={formData}
           setFormData={setFormData}
           saveContact={saveContact}
+          editId={editId}
         />
 
         <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 shadow-2xl">
           <Search search={search} setSearch={setSearch} />
-          <ContactList contacts={contacts} search={search} deleteContact={deleteContact}/>
+          <ContactList
+            contacts={contacts}
+            search={search}
+            deleteContact={deleteContact}
+            edit={edit}
+          />
         </div>
       </div>
     </div>
