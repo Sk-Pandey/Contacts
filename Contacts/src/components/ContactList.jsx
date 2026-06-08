@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactList = ({ contacts, search }) => {
+const ContactList = ({ contacts, search, deleteContact }) => {
   return (
     <div className="mt-8">
       {/* Header */}
@@ -65,6 +65,7 @@ const ContactList = ({ contacts, search }) => {
                     <button
                       className="btn btn-circle btn-sm btn-ghost hover:bg-error/20"
                       aria-label="Delete"
+                      onClick={() => deleteContact(person.id)}
                     >
                       🗑️
                     </button>

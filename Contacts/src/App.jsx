@@ -65,6 +65,12 @@ const App = () => {
       phone: "",
     });
   };
+
+  // delete contact function
+  const deleteContact = (id) => {
+    setContacts(contacts.filter((person) => person.id !== id));
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white">
       <Nav />
@@ -79,7 +85,7 @@ const App = () => {
 
         <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg p-6 shadow-2xl">
           <Search search={search} setSearch={setSearch} />
-          <ContactList contacts={contacts} search={search} />
+          <ContactList contacts={contacts} search={search} deleteContact={deleteContact}/>
         </div>
       </div>
     </div>
