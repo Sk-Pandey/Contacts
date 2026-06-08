@@ -86,7 +86,7 @@ const App = () => {
 
   // delete contact function
   const deleteContact = (id) => {
-    if (editId) {
+    if (editId === id) {
       setEditId(null);
       setFormData({
         id: "",
