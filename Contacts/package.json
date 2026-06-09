@@ -1,8 +1,8 @@
 {
   "name": "contacts",
   "private": true,
-  "version": "0.0.0",
-  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME",
+  "version": "1.0.0",
+  "homepage": "https://sk-pandey.github.io/Contacts/",
   "type": "module",
   "scripts": {
     "dev": "vite",
