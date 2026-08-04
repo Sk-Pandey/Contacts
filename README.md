@@ -1,7 +1,7 @@
 # 📇 Connectly - Contact Management Application
 
 A modern and responsive contact management application built with React, Vite, and Tailwind CSS.
-
+ 
 Connectly allows users to add, edit, delete, and search contacts through a beautiful glassmorphism-inspired user interface.
 
 ---
