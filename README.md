@@ -11,7 +11,7 @@ Connectly allows users to add, edit, delete, and search contacts through a beaut
 🔗 https://sk-pandey.github.io/Contacts/
  
 ---
-
+                  
 ## 📸 Preview
     
 Connectly provides a clean and elegant interface for managing personal contacts with:
