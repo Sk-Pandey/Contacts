@@ -9,7 +9,7 @@ Connectly allows users to add, edit, delete, and search contacts through a beaut
 ## 🚀 Live Demo
 
 🔗 https://sk-pandey.github.io/Contacts/
- 
+                                      
 ---
                   
 ## 📸 Preview
