@@ -5,7 +5,7 @@ A modern and responsive contact management application built with React, Vite, a
 Connectly allows users to add, edit, delete, and search contacts through a beautiful glassmorphism-inspired user interface.
 
 ---
-
+                  
 ## 🚀 Live Demo
              
 🔗 https://sk-pandey.github.io/Contacts/
